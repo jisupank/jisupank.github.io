@@ -1,0 +1,343 @@
+/* 커머셜 페이지에 연결되어 있는 모든페이지에 적용할 css */
+
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unna:wght@400;700&display=swap');
+
+/* Modern Normalize */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    width: 80px;
+    position: fixed;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    border-right: 1px solid #e4e4e4;
+    background-color: #fff;
+}
+.title {
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-90deg);
+    text-decoration: none;
+    width: 300px;
+    font-weight: 900;
+    font-size: 24px;
+    text-align: center;
+    font-family:"Noto Sans KR",sans-serif;
+}
+.title:after {
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    top: -28.88px;
+    right: -28.88px;
+    bottom: -28.88px;
+    left: -28.88px;
+}
+
+/* 이미지 갤러리 */
+.container {
+    padding-left: 80px;
+    display: flex;
+    flex-direction: column;
+}
+.gallery {
+    width: 100%;
+}
+.view {
+    overflow: hidden;
+    position: relative;
+    height: 670px;
+    float: right;
+    right: 3%;
+}
+.view-container{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    height: 100%;
+}
+.view-container::after{
+    content: '';
+    display: block;
+    position: relative;
+    clear: both;
+}
+.view-item {
+    position: relative;
+    float: left;
+    width: 1000px;
+    height: 100%;
+    overflow: hidden;
+}
+/* 이미지 위에 a태그 스타일 hover전엔 opacity:0으로 디스플레이화면에 안보이게 함 */
+.view-item a {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    text-decoration: none;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 30px;
+    font-weight: 800;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+/* opacity:1로 바꿔서 마우스오버시엔 0.3초동안 부드럽게 보여지도록 설정 */
+.view-item:hover a{
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+}
+/* 이미지위에 마우스 오버 전엔 opacity:0.8로 살짝 불투명하게 보이게 함 */
+.view-item img {
+    display: block;
+    width: 100%;
+    opacity: 0.8;
+}
+/* 뷰아이템(이미지 태그를 감싸고 있는)클래스에 마우스 오버 시 
+   이미지크기가 1.05배 크기로 변화하며 투명도 없이 보여짐(부드럽게) */
+.view-item:hover img{
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    opacity: 1;
+}
+
+/* 이미지 슬라이드 버튼 */
+div.nav {
+    position: absolute;top: 50%;transform: translateY(-50%);
+    width: 1100px; display: flex;justify-content: space-between;
+    font-size: 20px;line-height: 40px;right: 0%;
+}
+div.nav > button {
+    position:absolute;z-index:50;top:50%;width:52px;height:52px;
+    margin-top:-26px; border: 0; outline: 0;
+    background-color:rgba(214,214,214,0);cursor:pointer;
+    -webkit-transition:background-color 180ms ease-in-out
+}
+div.nav > button.prev {
+    display: inline-block; left: 0;
+}
+div.nav > button.prev::after {
+    content: "";display: block;position: absolute;
+    top:50%;left:50%;margin-left:2px;padding:5px;
+    border-right:2px solid #000;border-bottom:2px solid #000;
+    transform:translateX(-50%) translateY(-50%) rotate(135deg)
+}
+div.nav > button.next {
+    display: inline-block; right: 0;
+}
+div.nav > button.next::after {
+    content:"";display:block;position:absolute;
+    top:50%;left:50%;margin-left:-2px;padding:5px;
+    border-right:2px solid #000;border-bottom:2px solid #000;
+    transform:translateX(-50%) translateY(-50%) rotate(-45deg)
+}
+div.nav > button.next > span {padding-right: 20px;}
+
+/* 두번째 줄 이미지 크기 / 위치 조정 */
+.gallery-2 {
+    display: flex;
+    justify-content: space-between;
+    width: 1400px;
+    margin: 0 auto;
+    padding-top: 200px;
+    overflow: hidden;
+}
+.gallery-2 img {
+    display: block;
+    width: 100%;
+    opacity: 0.8;
+}
+.gallery-2 img:hover{
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    opacity: 1;
+}
+.gallery-2 .img-2 {
+    overflow: hidden;width: 500px;
+}
+.gallery-2 .img-3 {
+    overflow: hidden;width: 500px;
+    padding-top: 200px;
+}
+
+/* 세번째 줄 이미지 크기 / 위치 조정 */
+.gallery-3 {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 200px;
+    overflow: hidden;
+}
+.gallery-3 img {
+    display: block;
+    width: 100%;
+    opacity: 0.9;
+}
+.gallery-3 img:hover{
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    opacity: 1;
+}
+.gallery-3 .img-4 {
+    overflow: hidden;width: 500px;
+}
+.gallery-3 .img-5 {
+    overflow: hidden;width: 400px;
+    padding: 200px 0;
+}
+
+/* 아코디언 이미지 - le.html 한정 */
+.accordion{
+    position:relative;width:100%;height:550px;
+    padding-top: 200px;
+    padding-bottom: 100px;
+}
+.view-3{
+    display: flex;width: 100%;height: 100%;
+}
+.view3-item{
+    overflow: hidden;position: relative;flex: 1;height: 100%;
+    transition: all 500ms ease-in-out; /* 0.5초만큼 애니메이션이 되도록 속성 부여 */
+    /* flex - 부모 요소의 width 혹은 height 에서 item 개수에 따른 비율로 적용 */
+}
+.view3-item::before{
+    content:"";display:block;position:absolute;
+    z-index:1;top:0;right:0;bottom:0;left:0;
+}
+/* 아코디언 이미지에 마우스 오버시 200px만큼 커짐 */
+.view3-item:hover {
+    flex-basis: 200px; 
+}
+.view3-item::before{
+    content:"";display:block;position:absolute;
+    z-index:1;top:0;right:0;bottom:0;left:0;
+}
+.view3-item .image-wrap{
+    position:absolute;top:0;right:0;bottom:0;left:0;
+}
+.view3-item .menu-view{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100%;
+    -webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;
+    -webkit-box-align:center;-ms-flex-align:center;align-items:center;
+    -webkit-box-orient:vertical;-ms-flex-direction:column;
+    /* display:flex로 크기에 맞춰 정렬한 뒤 flex-direction: columns으로 세로로 맞춤 */
+    flex-direction:column;
+    /* 백그라운드 컬러에서 투명도를 0.3 줌 */
+    transition: 0.5s ease-in-out;
+    background-color:rgba(255,255,255,0.3)
+}
+/* 메뉴 뷰 마우스 오버 시 투명도 없애고 transition을 통해 부드럽게 변화시킴 */
+.view3-item .menu-view:hover{
+    background-color:rgba(255,255,255,0);
+    transition: 0.5s ease-in-out;
+}
+.view3-item .menu-view span{
+    color: #fff;
+    display:block;position:relative;
+    /* opacity:0, visibility:hidden으로 이미지 안에 있는 텍스트가 마우스 오버 전엔 안보이게 함 */
+    opacity:0;visibility:hidden;
+    -webkit-transition:all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -moz-transition:all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -o-transition:all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -ms-transition:all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    transition:all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950)
+}
+.view3-item .menu-view span.desc{
+    font: 20px Unna;font-weight: 400;
+    -webkit-transform:translateY(30px);
+    -moz-transform:translateY(30px);
+    -o-transform:translateY(30px);
+    -ms-transform:translateY(30px);
+    transform:translateY(30px)
+}
+/* 아코디언 이미지 위에 마우스오버시엔 visibility:visible, opacity:1로 화면에 보이게 함 */
+.view3-item:hover .menu-view span{
+    visibility:visible;opacity:1;
+    -webkit-transition-delay:180ms;
+    -moz-transition-delay:180ms;
+    -o-transition-delay:180ms;
+    -ms-transition-delay:180ms;
+    transition-delay:180ms
+}
+.view3-item:hover .menu-view span.desc{
+    -webkit-transform:translateY(0);
+    -moz-transform:translateY(0);
+    -o-transform:translateY(0);
+    -ms-transform:translateY(0);
+    transform:translateY(0)
+}
+.view3-item img{
+    display:block;
+    width:100%;height:100%;
+    object-fit:cover
+}
+
+/* 매거진 설명하는 박스 - kingkong.html 한정 */
+/* 이미지, 텍스트 간 위치/크기 조정 */
+.magazine-box {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px solid;
+    margin-bottom: 100px;
+}
+.magazine-box .magazine-img img {
+    width: 500px;
+}
+.magazine-box .magazine-text {
+    width: 600px;
+    margin-right: 100px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.magazine-box .magazine-text .magazine-title {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.button {
+    text-align: center;
+    margin-top: 110px;
+}
+/* 버튼 위에 마우스 오버 시 백그라운드, 텍스트 색 변하는 트랜지션 효과 */
+.button button {
+    padding: 30px 70px;
+    border: 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 15px;
+    transition: 0.3s ease-in-out;
+}
+.button:hover button{
+    background: none;
+    border: 1px solid #333;
+    color: #333;
+    transition: 0.3s ease-in-out;
+}

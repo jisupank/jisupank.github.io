@@ -1,0 +1,155 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unna:wght@700&display=swap');
+
+/* Modern Normalize */
+*,::after,::before{box-sizing:border-box}
+:root{-moz-tab-size:4;tab-size:4}
+html{line-height:1.15;-webkit-text-size-adjust:100%}
+body{margin:0}
+
+/* Layout */
+html{
+    overflow: hidden;
+    height:100vh;
+    font-family:"Noto Sans KR",sans-serif;
+    font-size:12px;
+    font-weight:400;
+    line-height: 1.5rem;
+    background-color:#fff;
+    color: #333;
+}
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    -webkit-box-pack: center;
+    -ms-flex-pack:center;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    justify-content:center;
+    align-items:center;
+    margin: 0;
+    text-align: center;
+}
+
+/* CATEGORY MENU */
+ul.category {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+}
+ul.category li {
+    list-style: none;
+    padding: 30px 10px;
+    text-align: center;
+}
+ul.category li a{
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+/* hover했을 떄 언더라인 */
+ul.category li a:hover{
+    border-bottom: 1px solid #333;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+/* 타이틀 텍스트 위치/크기 조정 */
+.view {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+/* 텍스트 스타일 */
+.container {
+    text-shadow:
+    -1px -1px 0 #999999,
+    1px -1px 0 #999999,
+    -1px 1px 0 #999999,
+    1px 1px 0 #999999;
+    color: #fff;
+    font-family: Arial;
+    font-size: 100px;
+    font-weight: 900;
+    padding: 10px 0;
+}
+/* 텍스트가 화면에 보여질 크기를 정함 */
+.hidden-line {
+    height: 100px;
+    overflow: hidden;
+}   
+/* 텍스트에 마우스 오버시 p태그가 위로 115px만큼 올라감 */
+.container:hover p {
+    transform: translate(0, -115px);
+}
+/* p 태그의 스타일 0.6초로 부드럽게 움직임 */
+p {
+    margin:0;
+    height: 110px;
+    line-height: 110px;
+    transition: 0.6s ease-in-out;
+    cursor: pointer;
+}
+/* 마우스 오버 시 아래에서 위로 올라올 p 태그 스타일 */
+p.bottom1{
+    /* 텍스트의 컬러를 투명으로 놓고 백그라운드에 텍스트 누르면 연결되는 페이지의 메인 이미지를 넣어서 텍스트에 마스크를 씌움 */
+    color:transparent;
+    background: url("../img/img/gentle1.jpg");
+    text-shadow:none;
+    background-position: 0 50%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+    background-clip: text;
+}
+/* 연결된 페이지마다 다 다른 백그라운드 이미지 지정 */
+p.bottom2{
+    color:transparent;
+    background: url("../img/img/kingkong3.jpg");
+    text-shadow:none;
+    background-position: 0 50%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+    background-clip: text;
+}
+p.bottom3{
+    color:transparent;
+    background: url("../img/img/hotel6.jpg");
+    text-shadow:none;
+    background-position: 0 50%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+    background-clip: text;
+}
+p.bottom4{
+    color:transparent;
+    background: url("../img/img/le8.jpg");
+    text-shadow:none;
+    background-position: 0 50%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+    background-clip: text;
+}
+p.bottom5{
+    color:transparent;
+    background: url("../img/img/style1.jpg");
+    text-shadow:none;
+    background-position: 0 50%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+    background-clip: text;
+}
